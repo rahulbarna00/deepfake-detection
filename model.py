@@ -65,6 +65,7 @@ class ModelTrainer:
             layers.Flatten(),
             
             layers.Dense(512, activation='relu'),
+            
             layers.Dropout(0.5),
             
             layers.Dense(2, activation='softmax')
