@@ -1,0 +1,535 @@
+
+body{
+    user-select: none;
+}
+.deepfake{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    // gap: 5%;
+}
+.deepfake .right{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.deepfake .left{
+    width: 60%;
+    height:100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+.deepfake .left video{
+    position: relative;
+    opacity: 1 !important;
+    width: 60%;
+    // height: 46%;
+    height: 280px;
+    object-fit: cover;
+    z-index: 1;
+    margin-top: 0%;
+}
+.deepfake .left .image{
+    margin-top: -280px;
+    margin-right: 0%; 
+    transition: 2s ease;
+    width: 60%;
+    height: 46%;
+    z-index: 100;
+}
+.deepfake .left .img{
+   width: 100%;
+   height: 100%;
+   animation: increaseWidth 8s linear;
+   object-fit: cover;
+}
+.deepfake .left .mt{
+    width: 65%;
+    height: 46%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: flex-start;
+    margin-top: -90px;
+    margin-right: -90px;
+}
+.deepfake .left .react{
+    z-index: 100;
+    width: 140px;
+    height: 130px;
+}
+// ( 173, 216, 230, 0.2 )
+// (2,114,255)
+.deepfake .left .result{
+    position: relative;
+    width: 62%;
+    height: 68%;
+    margin-bottom: 30px;
+    border-radius: 14px;
+    background: radial-gradient(30% 30% at top right, transparent 55%, RGBA(2,114,255, 0.08 ) 51%);
+    // box-shadow: 0px 1px 13px -2px rgba(173,216,230,0.24);
+    box-shadow: 0px 0px 9px -1px rgba(0,0,0,0.4);
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.deepfake .left .result h2{
+    width: 85%;
+    height: 25%;
+    margin: 0;
+    font-size: 0.96rem;
+    margin-left: 10px;
+    margin-top: 10px;
+    line-height: 20px;
+    opacity: 0.73;
+    margin-left: -50px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+.deepfake .left .result .bottom{
+    width: 95%;
+    height: 70%;
+    margin-bottom: 10px;
+    // display: flex;
+    // justify-content: center;
+    // align-items: center;
+    border-collapse: collapse;
+    opacity: 0.9;
+}
+table, th, td {
+    border: 1px solid black;
+  }
+
+  th, td {
+    text-align: center;
+    padding: 10px;
+  }
+
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+
+  th {
+    background-color: #333;
+    color: white;
+  }
+
+
+.deepfake .left .result::before {
+    content: '';
+    position: absolute;
+    top: -20%;
+    right: -7%;
+    width: 110px; /* Adjust the size to control the shadow size */
+    height: 100px; /* Adjust the size to control the shadow size */
+    background: white; /* Shadow color with opacity */
+    border-bottom-left-radius: 50%;
+    // border-radius: 50%;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0); /* Create a box shadow for the top-left corner */
+  }
+
+
+
+
+
+.blink{
+    animation: blink 2s 4;
+}
+@keyframes increaseWidth {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 80%;
+    }
+  }
+
+  @keyframes restWidth {
+    0% {
+      width: 80%;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  @keyframes blink {
+    0% { opacity: 1; }
+    10% {opacity: 0.8;}
+    20% {opacity: 0.6;}
+    30% {opacity: 0.4;}
+    40% {opacity: 0.2;}
+    50% { opacity: 0.36; }
+    70%{ opacity: 0.5;}
+    80%{ opacity: 0.67;}
+    90%{ opacity: 0.88;}
+    100% { opacity: 1; }
+}
+
+
+@keyframes autoScale {
+    0% {
+        transform: scale(0.5);
+    }
+    50% {
+        transform: scale(1.07);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
+
+
+
+
+.deepfake .right .box{
+    margin-left: -250px;
+    min-width: 65%;
+    width: 65%;
+    height: 50%;
+    border-radius: 30px;
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #55555500),var(--tw-ring-shadow, 0 0 #55555500),0px 0px 50px rgba(69, 69, 69, .1);
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+}
+.deepfake .right .box .up {
+    width: 100%;
+    height: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.deepfake .right .box .up button{
+    width: 57%;
+    height: 50px;
+    border-radius: 30px;
+    background-color: #0272FF;
+    color: white;
+    border: none;
+    font-size: 1.15rem;
+    transition: 0.6s ease;
+}
+
+.deepfake .right .box .up button:hover{
+    background-color: #0249B3;
+    cursor: pointer;
+    transform: scale(1.04);
+}
+.deepfake .right .box .up #Videoupload{
+    display: none;
+}
+.deepfake .right .box .up p{
+    user-select: none;
+    text-align: center;
+    width: 85%;
+    font-size: 0.9rem;
+}
+.deepfake .right .box .down{
+    border-top: 2px dashed black;
+    width: 90%;
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    display: none;
+    transition: 0.2s ease;
+}
+.deepfake .right .box .down .line{
+    border-top: 1px dashed black;
+    width: 90%;
+    height: 20px;
+}
+.deepfake .right .box .down button{
+    width: 50%;
+    height: 40px;
+    border-radius: 30px;
+    background-color: #0272FF;
+    color: white;
+    border: none;
+    font-size: 1.15rem;
+    transition: 0.6s ease;
+}
+
+.deepfake .right .box .down button:hover{
+    background-color: #0249B3;
+    cursor: pointer;
+    transform: scale(1.04);
+}
+
+.deepfake .right .box .down p{
+    margin: 0;
+    font-size: 0.9rem;
+}
+.deepfake .right .box .down .cancel{
+    margin-top: 2rem;
+    width: 40%;
+    height: 40px;
+    border-radius: 30px;
+    border: 1.5px solid #0272FF;
+    background-color: transparent;
+    color: #0272FF;
+    font-size: 1.15rem;
+    transition: 0.6s ease;
+}
+.deepfake .right .box .down .cancel:hover{
+    background-color: #0272FF;
+    cursor: pointer;
+    color: white;
+    transform: scale(1.04);
+}
+.deepfake  .ploy{
+    position: absolute;
+    top: 46%;
+    right: 9%;
+    width: 30px;
+    height: 25px;
+    transform: rotate(140deg);
+    transition: 0.3s ease;
+}
+
+.deepfake  .ploy:hover{
+    top: 49%;
+    right: 16%;
+    transform: rotate(190deg);
+}
+.deepfake .rope{
+    position: absolute;
+    top: 5%;
+    right: 3%;
+    width: 180px;
+    height: 180px;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+}
+
+
+
+
+
+
+
+@media screen and (max-width:700px){
+    .deepfake{
+        flex-direction: column;
+        gap: 10%;
+    }
+    .deepfake .left{
+        width: 100%;
+        height:60%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        flex-direction: column;
+    }
+    .deepfake .left video{
+        position: relative;
+        opacity: 1 !important;
+        width: 90%;
+        height: 220px;
+        object-fit: cover;
+        z-index: 1;
+        margin-top: 0%;
+    }
+    .deepfake .left .image{
+        margin-top: -220px;
+        margin-right: 0%; 
+        transition: 2s ease;
+        width: 90%;
+        height: 220px;
+        z-index: 100;
+        filter: brightness(1.4);
+    }
+    .deepfake .left .img{
+       width: 100%;
+       height: 100%;
+       animation: increaseWidth 8s linear;
+       object-fit: cover;
+    }
+    .deepfake .left .mt{
+        width: 65%;
+        height: 46%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-start;
+        margin-top: -65px;
+        margin-right: -130px;
+    }
+    .deepfake .left .react{
+        z-index: 100;
+        width: 100px;
+        height: 90px;
+    }
+    
+    .blink{
+        animation: blink 2s 4;
+    }
+    .deepfake .right{
+        width: 100%;
+        height: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    
+    
+    .deepfake .right .box{
+        margin-left: 0px;
+        margin-bottom: 60px;
+        min-width: 80%;
+        width: 65%;
+        height: 100%;
+        border-radius: 30px;
+        box-shadow: var(--tw-ring-offset-shadow, 0 0 #55555500),var(--tw-ring-shadow, 0 0 #55555500),0px 0px 50px rgba(69, 69, 69, .1);
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        flex-direction: column;
+    }
+    .deepfake .right .box .up {
+        width: 100%;
+        height: 60%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .deepfake .right .box .up button{
+        width: 60%;
+        height: 50px;
+        border-radius: 30px;
+        background-color: #0272FF;
+        color: white;
+        border: none;
+        font-size: 1.15rem;
+        transition: 0.6s ease;
+    }
+    
+    .deepfake .right .box .up button:hover{
+        background-color: #0249B3;
+        cursor: pointer;
+        transform: scale(1.04);
+    }
+    .deepfake .right .box .up #Videoupload{
+        display: none;
+    }
+    .deepfake .right .box .up p{
+        user-select: none;
+        text-align: center;
+        width: 80%;
+        font-size: 0.9rem;
+    }
+    .deepfake .right .box .down{
+        border-top: 2px dashed black;
+        width: 90%;
+        height: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        display: none;
+        transition: 0.2s ease;
+    }
+    .deepfake .right .box .down .line{
+        border-top: 1px dashed black;
+        width: 90%;
+        height: 20px;
+    }
+    .deepfake .right .box .down button{
+        width: 50%;
+        height: 40px;
+        border-radius: 30px;
+        background-color: #0272FF;
+        color: white;
+        border: none;
+        font-size: 1.15rem;
+        transition: 0.6s ease;
+    }
+    
+    .deepfake .right .box .down button:hover{
+        background-color: #0249B3;
+        cursor: pointer;
+        transform: scale(1.04);
+    }
+    
+    .deepfake .right .box .down p{
+        margin: 0;
+        font-size: 0.9rem;
+    }
+    .deepfake .right .box .down .cancel{
+        margin-top: 2rem;
+        width: 40%;
+        height: 40px;
+        border-radius: 30px;
+        border: 1.5px solid #0272FF;
+        background-color: transparent;
+        color: #0272FF;
+        font-size: 1.15rem;
+        transition: 0.6s ease;
+    }
+    .deepfake .right .box .down .cancel:hover{
+        background-color: #0272FF;
+        cursor: pointer;
+        color: white;
+        transform: scale(1.04);
+    }
+    .deepfake  .ploy{
+        position: absolute;
+        top: 74%;
+        right: 2%;
+        width: 30px;
+        height: 25px;
+        transform: rotate(140deg);
+        transition: 0.3s ease;
+    }
+    
+    .deepfake  .ploy:hover{
+        top: 70%;
+        right: 9%;
+        transform: rotate(190deg);
+    }
+    .deepfake .rope{
+        position: absolute;
+
+        top: 8%;
+        right: 1%;
+        width: 150px;
+        height: 260px;
+
+        
+        // top: 60%;
+        // right: 1%;
+        // width: 80px;
+        // height: 80px;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        pointer-events: none;
+    }
+    
+
+}
